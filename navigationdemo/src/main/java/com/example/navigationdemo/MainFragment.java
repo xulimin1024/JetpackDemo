@@ -70,7 +70,10 @@ public class MainFragment extends Fragment {
                 //NavHostFragment.findNavController(Fragment)
                 //Navigation.findNavController(Activity, @IdRes int viewId)
                 //Navigation.findNavController(View)
-                Navigation.findNavController(v).navigate(R.id.action_mainFragment_to_secondFragment);
+
+                Bundle bundle = new Bundle();
+                bundle.putString("param1","来自MainFragment的参数");
+                Navigation.findNavController(v).navigate(R.id.action_mainFragment_to_secondFragment,bundle);
             }
         });
         //方法2 Navigation.createNavigateOnClickListener会返回一个onClick对象，也可以直接进行监听
