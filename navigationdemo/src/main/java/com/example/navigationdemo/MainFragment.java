@@ -71,8 +71,10 @@ public class MainFragment extends Fragment {
                 //Navigation.findNavController(Activity, @IdRes int viewId)
                 //Navigation.findNavController(View)
 
-                Bundle bundle = new Bundle();
-                bundle.putString("param1","来自MainFragment的参数");
+//                Bundle bundle = new Bundle();
+//                bundle.putString("param1","来自MainFragment的参数");
+//                Navigation.findNavController(v).navigate(R.id.action_mainFragment_to_secondFragment,bundle);
+                Bundle bundle = new MainFragmentArgs.Builder().setUserName("李狗蛋").build().toBundle();
                 Navigation.findNavController(v).navigate(R.id.action_mainFragment_to_secondFragment,bundle);
             }
         });

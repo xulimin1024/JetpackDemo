@@ -24,7 +24,7 @@ public class SecondFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    private String user_name;
     public SecondFragment() {
         // Required empty public constructor
     }
@@ -53,6 +53,7 @@ public class SecondFragment extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+            user_name = MainFragmentArgs.fromBundle(getArguments()).getUserName();
         }
     }
 
@@ -61,9 +62,10 @@ public class SecondFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_second, container, false);
-        if (mParam1!=null&&!mParam1.equals("")){
-            ((TextView)view.findViewById(R.id.tv_second)).setText(mParam1);
-        }
+//        if (mParam1!=null&&!mParam1.equals("")){
+//            ((TextView)view.findViewById(R.id.tv_second)).setText(mParam1);
+//        }
+        ((TextView)view.findViewById(R.id.tv_second)).setText(user_name);
         return view;
     }
 }
