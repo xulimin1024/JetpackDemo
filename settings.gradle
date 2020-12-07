@@ -1,0 +1,4 @@
+include ':navigationdemo'
+include ':lifecycledemo'
+include ':app'
+rootProject.name = "JetpackSample"
